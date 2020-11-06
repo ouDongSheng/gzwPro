@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gzw.dao.BaseInfoDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.gzw.entity.BaseInfo">
+        <result column="id" property="id"/>
+        <result column="company_name" property="companyName"/>
+        <result column="company_short" property="companyShort"/>
+        <result column="company_type" property="companyType"/>
+        <result column="unit_header" property="unitHeader"/>
+        <result column="chief_accountant" property="chiefAccountant"/>
+        <result column="account_manager" property="accountManager"/>
+        <result column="preparer" property="preparer"/>
+        <result column="zip" property="zip"/>
+        <result column="mail_address" property="mailAddress"/>
+        <result column="region_code" property="regionCode"/>
+        <result column="area_number" property="areaNumber"/>
+        <result column="telephone_number" property="telephoneNumber"/>
+        <result column="audit_organization" property="auditOrganization"/>
+        <result column="signer" property="signer"/>
+        <result column="enterprise_code" property="enterpriseCode"/>
+        <result column="last_year_enterprise_code" property="lastYearEnterpriseCode"/>
+        <result column="parent_enterprise_code" property="parentEnterpriseCode"/>
+        <result column="base_enterprise_code" property="baseEnterpriseCode"/>
+        <result column="administrative_subject_code" property="administrativeSubjectCode"/>
+        <result column="department_code" property="departmentCode"/>
+        <result column="country_code" property="countryCode"/>
+        <result column="administrative_division_code" property="administrativeDivisionCode"/>
+        <result column="industry_classification_code" property="industryClassificationCode"/>
+        <result column="account_criteria" property="accountCriteria"/>
+        <result column="business_scale" property="businessScale"/>
+        <result column="economic_type" property="economicType"/>
+        <result column="organization_form" property="organizationForm"/>
+        <result column="new_lease_criteria" property="newLeaseCriteria"/>
+        <result column="stock_type" property="stockType"/>
+        <result column="stock_code" property="stockCode"/>
+        <result column="remark" property="remark"/>
+        <result column="salary_management_code" property="salaryManagementCode"/>
+        <result column="audit_mode" property="auditMode"/>
+        <result column="audit_opinion_type" property="auditOpinionType"/>
+        <result column="set_year" property="setYear"/>
+        <result column="report_factor" property="reportFactor"/>
+        <result column="other_report_factor" property="otherReportFactor"/>
+        <result column="report_type_code" property="reportTypeCode"/>
+        <result column="spare_code" property="spareCode"/>
+        <result column="register_address" property="registerAddress"/>
+        <result column="business_form" property="businessForm"/>
+        <result column="state" property="state"/>
+        <result column="administrative_city" property="administrativeCity"/>
+        <result column="administrative_province" property="administrativeProvince"/>
+        <result column="unit_nature" property="unitNature"/>
+        <result column="mixed_owner_enterprise" property="mixedOwnerEnterprise"/>
+        <result column="employee_owner_enterprise" property="employeeOwnerEnterprise"/>
+        <result column="sino_foreign_union_enterprise" property="sinoForeignUnionEnterprise"/>
+        <result column="cultural_enterprise" property="culturalEnterprise"/>
+        <result column="new_income_criteria" property="newIncomeCriteria"/>
+        <result column="new_financial_criteria" property="newFinancialCriteria"/>
+        <result column="budget_flag" property="budgetFlag"/>
+        <result column="hand_in_type" property="handInType"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        company_name,
+        company_short,
+        company_type,
+        unit_header,
+        chief_accountant,
+        account_manager,
+        preparer,
+        zip,
+        mail_address,
+        region_code,
+        area_number,
+        telephone_number,
+        audit_organization,
+        signer,
+        enterprise_code,
+        last_year_enterprise_code,
+        parent_enterprise_code,
+        base_enterprise_code,
+        administrative_subject_code,
+        department_code,
+        country_code,
+        administrative_division_code,
+        industry_classification_code,
+        account_criteria,
+        business_scale,
+        economic_type,
+        organization_form,
+        new_lease_criteria,
+        stock_type,
+        stock_code,
+        remark,
+        salary_management_code,
+        audit_mode,
+        audit_opinion_type,
+        set_year,
+        report_factor,
+        other_report_factor,
+        report_type_code,
+        spare_code,
+        register_address,
+        business_form,
+        state,
+        administrative_city,
+        administrative_province,
+        unit_nature,
+        mixed_owner_enterprise,
+        employee_owner_enterprise,
+        sino_foreign_union_enterprise,
+        cultural_enterprise,
+        new_income_criteria,
+        new_financial_criteria,
+        budget_flag,
+        hand_in_type
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO base_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.companyName != null"> company_name, </if>
+            <if test="pojo.companyShort != null"> company_short, </if>
+            <if test="pojo.companyType != null"> company_type, </if>
+            <if test="pojo.unitHeader != null"> unit_header, </if>
+            <if test="pojo.chiefAccountant != null"> chief_accountant, </if>
+            <if test="pojo.accountManager != null"> account_manager, </if>
+            <if test="pojo.preparer != null"> preparer, </if>
+            <if test="pojo.zip != null"> zip, </if>
+            <if test="pojo.mailAddress != null"> mail_address, </if>
+            <if test="pojo.regionCode != null"> region_code, </if>
+            <if test="pojo.areaNumber != null"> area_number, </if>
+            <if test="pojo.telephoneNumber != null"> telephone_number, </if>
+            <if test="pojo.auditOrganization != null"> audit_organization, </if>
+            <if test="pojo.signer != null"> signer, </if>
+            <if test="pojo.enterpriseCode != null"> enterprise_code, </if>
+            <if test="pojo.lastYearEnterpriseCode != null"> last_year_enterprise_code, </if>
+            <if test="pojo.parentEnterpriseCode != null"> parent_enterprise_code, </if>
+            <if test="pojo.baseEnterpriseCode != null"> base_enterprise_code, </if>
+            <if test="pojo.administrativeSubjectCode != null"> administrative_subject_code, </if>
+            <if test="pojo.departmentCode != null"> department_code, </if>
+            <if test="pojo.countryCode != null"> country_code, </if>
+            <if test="pojo.administrativeDivisionCode != null"> administrative_division_code, </if>
+            <if test="pojo.industryClassificationCode != null"> industry_classification_code, </if>
+            <if test="pojo.accountCriteria != null"> account_criteria, </if>
+            <if test="pojo.businessScale != null"> business_scale, </if>
+            <if test="pojo.economicType != null"> economic_type, </if>
+            <if test="pojo.organizationForm != null"> organization_form, </if>
+            <if test="pojo.newLeaseCriteria != null"> new_lease_criteria, </if>
+            <if test="pojo.stockType != null"> stock_type, </if>
+            <if test="pojo.stockCode != null"> stock_code, </if>
+            <if test="pojo.remark != null"> remark, </if>
+            <if test="pojo.salaryManagementCode != null"> salary_management_code, </if>
+            <if test="pojo.auditMode != null"> audit_mode, </if>
+            <if test="pojo.auditOpinionType != null"> audit_opinion_type, </if>
+            <if test="pojo.setYear != null"> set_year, </if>
+            <if test="pojo.reportFactor != null"> report_factor, </if>
+            <if test="pojo.otherReportFactor != null"> other_report_factor, </if>
+            <if test="pojo.reportTypeCode != null"> report_type_code, </if>
+            <if test="pojo.spareCode != null"> spare_code, </if>
+            <if test="pojo.registerAddress != null"> register_address, </if>
+            <if test="pojo.businessForm != null"> business_form, </if>
+            <if test="pojo.state != null"> state, </if>
+            <if test="pojo.administrativeCity != null"> administrative_city, </if>
+            <if test="pojo.administrativeProvince != null"> administrative_province, </if>
+            <if test="pojo.unitNature != null"> unit_nature, </if>
+            <if test="pojo.mixedOwnerEnterprise != null"> mixed_owner_enterprise, </if>
+            <if test="pojo.employeeOwnerEnterprise != null"> employee_owner_enterprise, </if>
+            <if test="pojo.sinoForeignUnionEnterprise != null"> sino_foreign_union_enterprise, </if>
+            <if test="pojo.culturalEnterprise != null"> cultural_enterprise, </if>
+            <if test="pojo.newIncomeCriteria != null"> new_income_criteria, </if>
+            <if test="pojo.newFinancialCriteria != null"> new_financial_criteria, </if>
+            <if test="pojo.budgetFlag != null"> budget_flag, </if>
+            <if test="pojo.handInType != null"> hand_in_type, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.companyName != null"> #{pojo.companyName}, </if>
+            <if test="pojo.companyShort != null"> #{pojo.companyShort}, </if>
+            <if test="pojo.companyType != null"> #{pojo.companyType}, </if>
+            <if test="pojo.unitHeader != null"> #{pojo.unitHeader}, </if>
+            <if test="pojo.chiefAccountant != null"> #{pojo.chiefAccountant}, </if>
+            <if test="pojo.accountManager != null"> #{pojo.accountManager}, </if>
+            <if test="pojo.preparer != null"> #{pojo.preparer}, </if>
+            <if test="pojo.zip != null"> #{pojo.zip}, </if>
+            <if test="pojo.mailAddress != null"> #{pojo.mailAddress}, </if>
+            <if test="pojo.regionCode != null"> #{pojo.regionCode}, </if>
+            <if test="pojo.areaNumber != null"> #{pojo.areaNumber}, </if>
+            <if test="pojo.auditOrganization != null"> #{pojo.auditOrganization}, </if>
+            <if test="pojo.signer != null"> #{pojo.signer}, </if>
+            <if test="pojo.enterpriseCode != null"> #{pojo.enterpriseCode}, </if>
+            <if test="pojo.lastYearEnterpriseCode != null"> #{pojo.lastYearEnterpriseCode}, </if>
+            <if test="pojo.parentEnterpriseCode != null"> #{pojo.parentEnterpriseCode}, </if>
+            <if test="pojo.baseEnterpriseCode != null"> #{pojo.baseEnterpriseCode}, </if>
+            <if test="pojo.administrativeSubjectCode != null"> #{pojo.administrativeSubjectCode}, </if>
+            <if test="pojo.departmentCode != null"> #{pojo.departmentCode}, </if>
+            <if test="pojo.countryCode != null"> #{pojo.countryCode}, </if>
+            <if test="pojo.administrativeDivisionCode != null"> #{pojo.administrativeDivisionCode}, </if>
+            <if test="pojo.industryClassificationCode != null"> #{pojo.industryClassificationCode}, </if>
+            <if test="pojo.accountCriteria != null"> #{pojo.accountCriteria}, </if>
+            <if test="pojo.businessScale != null"> #{pojo.businessScale}, </if>
+            <if test="pojo.economicType != null"> #{pojo.economicType}, </if>
+            <if test="pojo.organizationForm != null"> #{pojo.organizationForm}, </if>
+            <if test="pojo.newLeaseCriteria != null"> #{pojo.newLeaseCriteria}, </if>
+            <if test="pojo.stockType != null"> #{pojo.stockType}, </if>
+            <if test="pojo.stockCode != null"> #{pojo.stockCode}, </if>
+            <if test="pojo.remark != null"> #{pojo.remark}, </if>
+            <if test="pojo.salaryManagementCode != null"> #{pojo.salaryManagementCode}, </if>
+            <if test="pojo.auditMode != null"> #{pojo.auditMode}, </if>
+            <if test="pojo.auditOpinionType != null"> #{pojo.auditOpinionType}, </if>
+            <if test="pojo.setYear != null"> #{pojo.setYear}, </if>
+            <if test="pojo.reportFactor != null"> #{pojo.reportFactor}, </if>
+            <if test="pojo.otherReportFactor != null"> #{pojo.otherReportFactor}, </if>
+            <if test="pojo.reportTypeCode != null"> #{pojo.reportTypeCode}, </if>
+            <if test="pojo.spareCode != null"> #{pojo.spareCode}, </if>
+            <if test="pojo.registerAddress != null"> #{pojo.registerAddress}, </if>
+            <if test="pojo.businessForm != null"> #{pojo.businessForm}, </if>
+            <if test="pojo.state != null"> #{pojo.state}, </if>
+            <if test="pojo.administrativeCity != null"> #{pojo.administrativeCity}, </if>
+            <if test="pojo.administrativeProvince != null"> #{pojo.administrativeProvince}, </if>
+            <if test="pojo.unitNature != null"> #{pojo.unitNature}, </if>
+            <if test="pojo.mixedOwnerEnterprise != null"> #{pojo.mixedOwnerEnterprise}, </if>
+            <if test="pojo.employeeOwnerEnterprise != null"> #{pojo.employeeOwnerEnterprise}, </if>
+            <if test="pojo.sinoForeignUnionEnterprise != null"> #{pojo.sinoForeignUnionEnterprise}, </if>
+            <if test="pojo.culturalEnterprise != null"> #{pojo.culturalEnterprise}, </if>
+            <if test="pojo.newIncomeCriteria != null"> #{pojo.newIncomeCriteria}, </if>
+            <if test="pojo.newFinancialCriteria != null"> #{pojo.newFinancialCriteria}, </if>
+            <if test="pojo.budgetFlag != null"> #{pojo.budgetFlag}, </if>
+            <if test="pojo.handInType != null"> #{pojo.handInType}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO base_info(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.companyName},
+            #{pojo.companyShort},
+            #{pojo.companyType},
+            #{pojo.unitHeader},
+            #{pojo.chiefAccountant},
+            #{pojo.accountManager},
+            #{pojo.preparer},
+            #{pojo.zip},
+            #{pojo.mailAddress},
+            #{pojo.regionCode},
+            #{pojo.areaNumber},
+            #{pojo.auditOrganization},
+            #{pojo.signer},
+            #{pojo.enterpriseCode},
+            #{pojo.lastYearEnterpriseCode},
+            #{pojo.parentEnterpriseCode},
+            #{pojo.baseEnterpriseCode},
+            #{pojo.administrativeSubjectCode},
+            #{pojo.departmentCode},
+            #{pojo.countryCode},
+            #{pojo.administrativeDivisionCode},
+            #{pojo.industryClassificationCode},
+            #{pojo.accountCriteria},
+            #{pojo.businessScale},
+            #{pojo.economicType},
+            #{pojo.organizationForm},
+            #{pojo.newLeaseCriteria},
+            #{pojo.stockType},
+            #{pojo.stockCode},
+            #{pojo.remark},
+            #{pojo.salaryManagementCode},
+            #{pojo.auditMode},
+            #{pojo.auditOpinionType},
+            #{pojo.setYear},
+            #{pojo.reportFactor},
+            #{pojo.otherReportFactor},
+            #{pojo.reportTypeCode},
+            #{pojo.spareCode},
+            #{pojo.registerAddress},
+            #{pojo.businessForm},
+            #{pojo.state},
+            #{pojo.administrativeCity},
+            #{pojo.administrativeProvince},
+            #{pojo.unitNature},
+            #{pojo.mixedOwnerEnterprise},
+            #{pojo.employeeOwnerEnterprise},
+            #{pojo.sinoForeignUnionEnterprise},
+            #{pojo.culturalEnterprise},
+            #{pojo.newIncomeCriteria},
+            #{pojo.newFinancialCriteria},
+            #{pojo.budgetFlag},
+            #{pojo.handInType}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE base_info
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.companyName != null"> company_name = #{pojo.companyName}, </if>
+            <if test="pojo.companyShort != null"> company_short = #{pojo.companyShort}, </if>
+            <if test="pojo.companyType != null"> company_type = #{pojo.companyType}, </if>
+            <if test="pojo.unitHeader != null"> unit_header = #{pojo.unitHeader}, </if>
+            <if test="pojo.chiefAccountant != null"> chief_accountant = #{pojo.chiefAccountant}, </if>
+            <if test="pojo.accountManager != null"> account_manager = #{pojo.accountManager}, </if>
+            <if test="pojo.preparer != null"> preparer = #{pojo.preparer}, </if>
+            <if test="pojo.zip != null"> zip = #{pojo.zip}, </if>
+            <if test="pojo.mailAddress != null"> mail_address = #{pojo.mailAddress}, </if>
+            <if test="pojo.regionCode != null"> region_code = #{pojo.regionCode}, </if>
+            <if test="pojo.areaNumber != null"> area_number = #{pojo.areaNumber}, </if>
+            <if test="pojo.telephoneNumber != null"> telephone_number, </if>
+            <if test="pojo.auditOrganization != null"> audit_organization = #{pojo.auditOrganization}, </if>
+            <if test="pojo.signer != null"> signer = #{pojo.signer}, </if>
+            <if test="pojo.enterpriseCode != null"> enterprise_code = #{pojo.enterpriseCode}, </if>
+            <if test="pojo.lastYearEnterpriseCode != null"> last_year_enterprise_code = #{pojo.lastYearEnterpriseCode}, </if>
+            <if test="pojo.parentEnterpriseCode != null"> parent_enterprise_code = #{pojo.parentEnterpriseCode}, </if>
+            <if test="pojo.baseEnterpriseCode != null"> base_enterprise_code = #{pojo.baseEnterpriseCode}, </if>
+            <if test="pojo.administrativeSubjectCode != null"> administrative_subject_code = #{pojo.administrativeSubjectCode}, </if>
+            <if test="pojo.departmentCode != null"> department_code = #{pojo.departmentCode}, </if>
+            <if test="pojo.countryCode != null"> country_code = #{pojo.countryCode}, </if>
+            <if test="pojo.administrativeDivisionCode != null"> administrative_division_code = #{pojo.administrativeDivisionCode}, </if>
+            <if test="pojo.industryClassificationCode != null"> industry_classification_code = #{pojo.industryClassificationCode}, </if>
+            <if test="pojo.accountCriteria != null"> account_criteria = #{pojo.accountCriteria}, </if>
+            <if test="pojo.businessScale != null"> business_scale = #{pojo.businessScale}, </if>
+            <if test="pojo.economicType != null"> economic_type = #{pojo.economicType}, </if>
+            <if test="pojo.organizationForm != null"> organization_form = #{pojo.organizationForm}, </if>
+            <if test="pojo.newLeaseCriteria != null"> new_lease_criteria = #{pojo.newLeaseCriteria}, </if>
+            <if test="pojo.stockType != null"> stock_type = #{pojo.stockType}, </if>
+            <if test="pojo.stockCode != null"> stock_code = #{pojo.stockCode}, </if>
+            <if test="pojo.remark != null"> remark = #{pojo.remark}, </if>
+            <if test="pojo.salaryManagementCode != null"> salary_management_code = #{pojo.salaryManagementCode}, </if>
+            <if test="pojo.auditMode != null"> audit_mode = #{pojo.auditMode}, </if>
+            <if test="pojo.auditOpinionType != null"> audit_opinion_type = #{pojo.auditOpinionType}, </if>
+            <if test="pojo.setYear != null"> set_year = #{pojo.setYear}, </if>
+            <if test="pojo.reportFactor != null"> report_factor = #{pojo.reportFactor}, </if>
+            <if test="pojo.otherReportFactor != null"> other_report_factor = #{pojo.otherReportFactor}, </if>
+            <if test="pojo.reportTypeCode != null"> report_type_code = #{pojo.reportTypeCode}, </if>
+            <if test="pojo.spareCode != null"> spare_code = #{pojo.spareCode}, </if>
+            <if test="pojo.registerAddress != null"> register_address = #{pojo.registerAddress}, </if>
+            <if test="pojo.businessForm != null"> business_form = #{pojo.businessForm}, </if>
+            <if test="pojo.state != null"> state = #{pojo.state}, </if>
+            <if test="pojo.administrativeCity != null"> administrative_city = #{pojo.administrativeCity}, </if>
+            <if test="pojo.administrativeProvince != null"> administrative_province = #{pojo.administrativeProvince}, </if>
+            <if test="pojo.unitNature != null"> unit_nature = #{pojo.unitNature}, </if>
+            <if test="pojo.mixedOwnerEnterprise != null"> mixed_owner_enterprise = #{pojo.mixedOwnerEnterprise}, </if>
+            <if test="pojo.employeeOwnerEnterprise != null"> employee_owner_enterprise = #{pojo.employeeOwnerEnterprise}, </if>
+            <if test="pojo.sinoForeignUnionEnterprise != null"> sino_foreign_union_enterprise = #{pojo.sinoForeignUnionEnterprise}, </if>
+            <if test="pojo.culturalEnterprise != null"> cultural_enterprise = #{pojo.culturalEnterprise}, </if>
+            <if test="pojo.newIncomeCriteria != null"> new_income_criteria = #{pojo.newIncomeCriteria}, </if>
+            <if test="pojo.newFinancialCriteria != null"> new_financial_criteria = #{pojo.newFinancialCriteria}, </if>
+            <if test="pojo.budgetFlag != null"> budget_flag = #{pojo.budgetFlag}, </if>
+            <if test="pojo.handInType != null"> hand_in_type = #{pojo.handInType} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM base_info
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.companyName != null"> AND company_name = #{pojo.companyName} </if>
+            <if test="pojo.companyShort != null"> AND company_short = #{pojo.companyShort} </if>
+            <if test="pojo.companyType != null"> AND company_type = #{pojo.companyType} </if>
+            <if test="pojo.unitHeader != null"> AND unit_header = #{pojo.unitHeader} </if>
+            <if test="pojo.chiefAccountant != null"> AND chief_accountant = #{pojo.chiefAccountant} </if>
+            <if test="pojo.accountManager != null"> AND account_manager = #{pojo.accountManager} </if>
+            <if test="pojo.preparer != null"> AND preparer = #{pojo.preparer} </if>
+            <if test="pojo.zip != null"> AND zip = #{pojo.zip} </if>
+            <if test="pojo.mailAddress != null"> AND mail_address = #{pojo.mailAddress} </if>
+            <if test="pojo.regionCode != null"> AND region_code = #{pojo.regionCode} </if>
+            <if test="pojo.areaNumber != null"> AND area_number = #{pojo.areaNumber} </if>
+            <if test="pojo.auditOrganization != null"> AND audit_organization = #{pojo.auditOrganization} </if>
+            <if test="pojo.signer != null"> AND signer = #{pojo.signer} </if>
+            <if test="pojo.enterpriseCode != null"> AND enterprise_code = #{pojo.enterpriseCode} </if>
+            <if test="pojo.lastYearEnterpriseCode != null"> AND last_year_enterprise_code = #{pojo.lastYearEnterpriseCode} </if>
+            <if test="pojo.parentEnterpriseCode != null"> AND parent_enterprise_code = #{pojo.parentEnterpriseCode} </if>
+            <if test="pojo.baseEnterpriseCode != null"> AND base_enterprise_code = #{pojo.baseEnterpriseCode} </if>
+            <if test="pojo.administrativeSubjectCode != null"> AND administrative_subject_code = #{pojo.administrativeSubjectCode} </if>
+            <if test="pojo.departmentCode != null"> AND department_code = #{pojo.departmentCode} </if>
+            <if test="pojo.countryCode != null"> AND country_code = #{pojo.countryCode} </if>
+            <if test="pojo.administrativeDivisionCode != null"> AND administrative_division_code = #{pojo.administrativeDivisionCode} </if>
+            <if test="pojo.industryClassificationCode != null"> AND industry_classification_code = #{pojo.industryClassificationCode} </if>
+            <if test="pojo.accountCriteria != null"> AND account_criteria = #{pojo.accountCriteria} </if>
+            <if test="pojo.businessScale != null"> AND business_scale = #{pojo.businessScale} </if>
+            <if test="pojo.economicType != null"> AND economic_type = #{pojo.economicType} </if>
+            <if test="pojo.organizationForm != null"> AND organization_form = #{pojo.organizationForm} </if>
+            <if test="pojo.newLeaseCriteria != null"> AND new_lease_criteria = #{pojo.newLeaseCriteria} </if>
+            <if test="pojo.stockType != null"> AND stock_type = #{pojo.stockType} </if>
+            <if test="pojo.stockCode != null"> AND stock_code = #{pojo.stockCode} </if>
+            <if test="pojo.remark != null"> AND remark = #{pojo.remark} </if>
+            <if test="pojo.salaryManagementCode != null"> AND salary_management_code = #{pojo.salaryManagementCode} </if>
+            <if test="pojo.auditMode != null"> AND audit_mode = #{pojo.auditMode} </if>
+            <if test="pojo.auditOpinionType != null"> AND audit_opinion_type = #{pojo.auditOpinionType} </if>
+            <if test="pojo.setYear != null"> AND set_year = #{pojo.setYear} </if>
+            <if test="pojo.reportFactor != null"> AND report_factor = #{pojo.reportFactor} </if>
+            <if test="pojo.otherReportFactor != null"> AND other_report_factor = #{pojo.otherReportFactor} </if>
+            <if test="pojo.reportTypeCode != null"> AND report_type_code = #{pojo.reportTypeCode} </if>
+            <if test="pojo.spareCode != null"> AND spare_code = #{pojo.spareCode} </if>
+            <if test="pojo.registerAddress != null"> AND register_address = #{pojo.registerAddress} </if>
+            <if test="pojo.businessForm != null"> AND business_form = #{pojo.businessForm} </if>
+            <if test="pojo.state != null"> AND state = #{pojo.state} </if>
+            <if test="pojo.administrativeCity != null"> AND administrative_city = #{pojo.administrativeCity} </if>
+            <if test="pojo.administrativeProvince != null"> AND administrative_province = #{pojo.administrativeProvince} </if>
+            <if test="pojo.unitNature != null"> AND unit_nature = #{pojo.unitNature} </if>
+            <if test="pojo.mixedOwnerEnterprise != null"> AND mixed_owner_enterprise = #{pojo.mixedOwnerEnterprise} </if>
+            <if test="pojo.employeeOwnerEnterprise != null"> AND employee_owner_enterprise = #{pojo.employeeOwnerEnterprise} </if>
+            <if test="pojo.sinoForeignUnionEnterprise != null"> AND sino_foreign_union_enterprise = #{pojo.sinoForeignUnionEnterprise} </if>
+            <if test="pojo.culturalEnterprise != null"> AND cultural_enterprise = #{pojo.culturalEnterprise} </if>
+            <if test="pojo.newIncomeCriteria != null"> AND new_income_criteria = #{pojo.newIncomeCriteria} </if>
+            <if test="pojo.newFinancialCriteria != null"> AND new_financial_criteria = #{pojo.newFinancialCriteria} </if>
+            <if test="pojo.budgetFlag != null"> AND budget_flag = #{pojo.budgetFlag} </if>
+            <if test="pojo.handInType != null"> AND hand_in_type = #{pojo.handInType} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM et_base_info where id = #{id}
+    </delete>
+</mapper>

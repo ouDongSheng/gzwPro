@@ -1,0 +1,4 @@
+deploy/Jenkinsfile merge=ours
+deploy/dockerfile merge=ours
+deploy/init.sh merge=ours
+deploy/deploy.yaml merge=ours

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.gzw</groupId>
+		<artifactId>gzw-financial-budget-admin</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+    </parent>
+    
+	<artifactId>gzw-financial-budget-admin-gateway</artifactId>
+	<packaging>jar</packaging>
+
+	<properties>
+		<bladex.tool.version>2.0.7.RELEASE</bladex.tool.version>
+		<spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+		<spring.platform.version>Cairo-SR8</spring.platform.version>
+		<mybatis.plus.version>3.1.2</mybatis.plus.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 推荐使用Harbor -->
+		<docker.registry.url>192.9.102.124</docker.registry.url>
+		<docker.project.name>bladex</docker.project.name>
+		<docker.registry.host>${docker.registry.url}:80</docker.registry.host>
+		<docker.plugin.version>1.2.0</docker.plugin.version>
+		<docker.image.prefix>springboot</docker.image.prefix>
+		<spring.dynamic.datasource.version>2.5.6</spring.dynamic.datasource.version>
+		<docker.repository>aliyun-docker-registry</docker.repository>
+		<docker.registry.name>registry.cn-shenzhen.aliyuncs.com/aside/project</docker.registry.name>
+		<java.version>1.8</java.version>
+		<maven.plugin.version>3.8.1</maven.plugin.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>${spring.platform.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.gzw</groupId>
+			<artifactId>gzw-financial-budget-admin-biz-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://repo.rdc.aliyun.com/repository/40713-release-o3XflI/</url>
+        </repository>
+        <repository>
+            <id>rdc-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/40713-snapshot-K1xEhT/</url>
+        </repository>
+    </repositories>
+
+	<build>
+		<finalName>gzw-admin</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+					<compilerArgs>
+						<arg>-parameters</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot.version}</version>
+				<configuration>
+					<finalName>${project.build.finalName}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>${docker.plugin.version}</version>
+				<configuration>
+					<serverId>${docker.repository}</serverId>
+					<registryUrl>${docker.repository}</registryUrl>
+					<pushImage>true</pushImage>
+					<dockerDirectory>${project.basedir}/src/main/resources/docker</dockerDirectory>
+					<imageName>${docker.registry.name}:${project.build.finalName}-1.0</imageName>
+					<!-- <dockerHost>${docker.registry.host}</dockerHost> -->
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<!--suppress UnresolvedMavenProperty -->
+								<copy overwrite="true"
+									tofile="${session.executionRootDirectory}/target/${project.build.finalName}.jar"
+									file="${project.build.directory}/${project.build.finalName}.jar" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

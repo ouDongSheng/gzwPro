@@ -1,0 +1,12 @@
+
+description = 'etop-propertyRight-admin-commmon'
+dependencies {
+    compile 'org.springblade:BladeX-Boot-Nwf:2.0.7.RELEASE@jar'
+    compile group: 'org.springblade', name: 'blade-core-test', version:'2.0.7.RELEASE'
+//    compile group: 'org.projectlombok', name: 'lombok', version:'1.18.8'
+    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version:'6.4.0.jre8'
+    compile group: 'com.baomidou', name: 'dynamic-datasource-spring-boot-starter', version:'2.5.6'
+
+    compile 'org.projectlombok:lombok:1.16.6'
+    annotationProcessor "org.projectlombok:lombok:1.16.6"
+}
